@@ -21,7 +21,7 @@ public class ReplanDeliveryTest {
 
     @BeforeEach
     public void setUp() {
-        open("http://Localhost:9999/");
+        open("http://localhost:9999/");
     }
 
 
