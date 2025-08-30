@@ -1,4 +1,4 @@
-package test;
+package test.test;
 
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +10,7 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static ru.netology.data.DataGenerator.*;
+import static test.data.DataGenerator.*;
 
 public class ReplanDeliveryTest {
     String city = generateCity();
@@ -117,7 +117,8 @@ public class ReplanDeliveryTest {
         $(By.cssSelector("[data-test-id=\"phone\"] input")).setValue("+9807");
         $(By.className("checkbox__box")).click();
         $(".button").click();
-        $("[data-test-id=\"phone\"].input_invalid .input__sub").shouldHave(Condition.text("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."), Duration.ofSeconds(15));
+        $("[data-test-id=\"success-notification\"] .notification__title").shouldHave(Condition.text("Успешно!"), Duration.ofSeconds(15));
+        $("[data-test-id=\"success-notification\"] .notification__content").shouldHave(Condition.text("Встреча успешно запланирована на " + date));
     }
 
     @Test

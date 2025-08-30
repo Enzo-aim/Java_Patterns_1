@@ -1,12 +1,10 @@
-package ru.netology.data;
+package test.data;
 
 import com.github.javafaker.Faker;
-import lombok.Value;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
